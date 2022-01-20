@@ -13,8 +13,6 @@ local BuffCommand = 2         -- .buff and .buff target commands - 0:disable 1:e
 -- END CONFIG
 ------------------------------------------------------------------------------------------------
 
--- TODO: a table of buffs for lvls <80 , buff target can be 10 lvl below the spell lvl
-
 if (EnableModule ~= 1) then return end
 
 require ("ObjectVariables")
