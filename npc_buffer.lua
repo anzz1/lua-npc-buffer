@@ -7,10 +7,15 @@ local AnnounceModule = 1      -- Announce module on player login ?
 local UnitEntry = 601016      -- NPC ID
 local TriggerEntry = 601017   -- Trigger NPC ID
 local BuffCureRes = 1         -- Cure Resurrection Sickness
-local BuffCommand = 2         -- .buff and .buff target commands - 0:disable 1:enable 2:gm only
+local BuffCommand = 2         -- Buff commands - 0:disable 1:enable 2:gm only
 
------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 -- END CONFIG
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+-- COMMANDS: .buff
+--           .buff target
+--           .buff group
 ------------------------------------------------------------------------------------------------
 
 if (EnableModule ~= 1) then return end
