@@ -24,12 +24,13 @@ SET
 @TypeFlags       := 0,
 @FlagsExtra      := 2,
 @AIName          := "PassiveAI",
+@HealthMod       := 4,
 @Script          := "";
 
 -- NPC
 DELETE FROM world.creature_template WHERE entry = @Entry;
-INSERT INTO world.creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, scale, rank, unit_class, unit_flags, unit_flags2, type, type_flags, flags_extra, AiName, MovementType, ScriptName) VALUES
-(@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, @Scale, @Rank, 1, 768, 2048, @Type, @TypeFlags, @FlagsExtra, @AIName, 0, @Script);
+INSERT INTO world.creature_template (entry, modelid1, name, subname, IconName, gossip_menu_id, minlevel, maxlevel, faction, npcflag, scale, rank, unit_class, unit_flags, unit_flags2, type, type_flags, flags_extra, AiName, MovementType, HealthModifier, ScriptName) VALUES
+(@Entry, @Model, @Name, @Title, @Icon, @GossipMenu, @MinLevel, @MaxLevel, @Faction, @NPCFlag, @Scale, @Rank, 1, 768, 2048, @Type, @TypeFlags, @FlagsExtra, @AIName, 0, @HealthMod, @Script);
 
 -- NPC EQUIPPED
 DELETE FROM world.creature_equip_template WHERE CreatureID=@Entry AND ID=1;
