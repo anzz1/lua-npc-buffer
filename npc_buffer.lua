@@ -135,11 +135,9 @@ end
 local function getPet(player)
     local petguid = player:GetPetGUID()
     if (petguid) then
-        local wo_tbl = player:GetNearObjects(40, 8, 0, 2, 0) -- RANGE:40, TYPEMASK_UNIT:8, FRIENDLY:2
-        for _,obj in ipairs(wo_tbl) do
-            if (obj:GetGUID() == petguid) then
-                return obj:ToUnit()
-            end
+        local pet = player:GetMap():GetWorldObject(petguid)
+        if (pet) then
+            return pet:ToUnit()
         end
     end
     return nil
